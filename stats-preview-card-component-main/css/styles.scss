@@ -1,27 +1,142 @@
 // Style Guide
 
 // Layout
-$mobile: 375px;
-$desktop: 1440px;
+// Mobile: 375px;
+// Desktop: 1440px;
 
 // Colors
 $dark-blue: hsl(233, 47%, 7%);
 $saturate-blue: hsl(244, 38%, 16%);
 $soft-violet: hsl(277, 64%, 61%);
+$soft-violet-overlay: hsla(277, 64%, 61%, 0.75);
 
 $transparent-1: hsla(0, 0%, 100%, 0.75);
 $transparent-2: hsla(0, 0%, 100%, 0.6);
 
-// Typography: Inter 400, 700
+// Typography:
+// Inter 400, 700
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+// Lexend Deca
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
 }
 
 body {
     background-color: $dark-blue;
+    color: white;
+    font-family: "Lexend Deca", sans-serif;
+    min-height: 100vh;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $transparent-2;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    padding: 4rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: $saturate-blue;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container-img {
+    background: url("../img/image-header-mobile.jpg") no-repeat center/cover;
+    width: 100%;
+    height: 100%;
+
+    .overlay {
+        background-color: $soft-violet-overlay;
+        height: 100%;
+    }
+}
+
+.container-text {
+    height: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    h1 {
+        font-size: 32px;
+        font-family: "Inter";
+        font-weight: bold;
+    }
+
+    span {
+        color: $soft-violet;
+    }
+
+    .stats {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 22px;
+            font-family: "Inter";
+            font-weight: bold;
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 80%;
+        max-height: 450px;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .container-img {
+            background: url("../img/image-header-desktop.jpg") no-repeat center/cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .container-text {
+        height: 100%;
+        padding: 5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+
+        .stats {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
 }
