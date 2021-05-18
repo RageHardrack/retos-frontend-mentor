@@ -1,0 +1,136 @@
+// Style Guide
+
+// Colors
+$dark-blue: hsl(233, 47%, 7%);
+$saturate-blue: hsl(244, 38%, 16%);
+$soft-violet: hsl(277, 64%, 61%);
+$soft-violet-overlay: hsla(277, 88%, 30%, 0.6);
+
+$transparent-1: hsla(0, 0%, 100%, 0.75);
+$transparent-2: hsla(0, 0%, 100%, 0.6);
+
+// Typography:
+// Inter 400, 700
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+// Lexend Deca
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $dark-blue;
+    color: white;
+    font-family: "Lexend Deca", sans-serif;
+    min-height: 100vh;
+}
+
+p {
+    display: block;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $transparent-2;
+}
+
+.container {
+    display: flex;
+    padding: 10%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: $saturate-blue;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.container-img {
+    height: 250px;
+    background: url("../img/image-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .overlay {
+        background-color: $soft-violet-overlay;
+        height: 100%;
+    }
+}
+
+.container-text {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    h1 {
+        font-size: 32px;
+        font-family: "Inter";
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    span {
+        color: $soft-violet;
+    }
+
+    .stats {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-text {
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-family: "Inter";
+            font-weight: bold;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 1000px;
+        max-height: 450px;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .container-img {
+            background: url("../img/image-header-desktop.jpg") no-repeat center/cover;
+            width: 500px;
+            height: 500px;
+        }
+    }
+
+    .container-text {
+        max-width: 500px;
+        padding: 5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+
+        .stats {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}
